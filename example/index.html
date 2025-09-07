@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Icon Library Demo</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            padding: 2rem;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .icon-card {
+            text-align: center;
+            padding: 1rem;
+            border: 1px solid #eee;
+            border-radius: 4px;
+        }
+        .icon-card svg {
+            margin-bottom: 0.5rem;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .code {
+            background: #f8f8f8;
+            padding: 1rem;
+            border-radius: 4px;
+            font-family: monospace;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>React Icon Library Demo</h1>
+        <p>This is a demonstration of the React Icon Library in action.</p>
+        
+        <h2>Installation</h2>
+        <div class="code">
+            npm install react-icon-library
+        </div>
+        
+        <h2>Usage Examples</h2>
+        <div class="code">
+            import { IconStar, IconHome, IconSearch, IconArrowRight } from 'react-icon-library/icons';
+        </div>
+        
+        <div id="root"></div>
+    </div>
+
+    <script type="text/babel">
+        // In a real application, you would import these from the library
+        // import { IconStar, IconHome, IconSearch, IconArrowRight } from 'react-icon-library/icons';
+        
+        const { useState } = React;
+        
+        // Mock icon components for demonstration
+        const IconStar = ({ size = '1em', color = 'currentColor', spin, ...props }) => (
+            <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props} style={spin ? { animation: 'spin 1s linear infinite' } : {}}>
+                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" />
+                {spin && <style>{`@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }`}</style>}
+            </svg>
+        );
+        
+        const IconHome = ({ size = '1em', color = 'currentColor', ...props }) => (
+            <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 0 0 1-2-2z" />
+                <polyline points="9,22 9,12 15,12 15,22" />
+            </svg>
+        );
+        
+        const IconSearch = ({ size = '1em', color = 'currentColor', ...props }) => (
+            <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.35-4.35" />
+            </svg>
+        );
+        
+        const IconArrowRight = ({ size = '1em', color = 'currentColor', ...props }) => (
+            <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12,5 19,12 12,19" />
+            </svg>
+        );
+        
+        const App = () => {
+            const [iconColor, setIconColor] = useState('#333');
+            
+            return (
+                <div>
+                    <div className="icon-grid">
+                        <div className="icon-card">
+                            <IconStar size="2em" />
+                            <div>Default Star</div>
+                        </div>
+                        
+                        <div className="icon-card">
+                            <IconStar size="2em" color="gold" />
+                            <div>Gold Star</div>
+                        </div>
+                        
+                        <div className="icon-card">
+                            <IconStar size="2em" spin />
+                            <div>Spinning Star</div>
+                        </div>
+                        
+                        <div className="icon-card">
+                            <IconHome size="2em" color="blue" />
+                            <div>Blue Home</div>
+                        </div>
+                        
+                        <div className="icon-card">
+                            <IconSearch size="2em" color="green" />
+                            <div>Green Search</div>
+                        </div>
+                        
+                        <div className="icon-card">
+                            <IconArrowRight size="2em" color="red" />
+                            <div>Red Arrow</div>
+                        </div>
+                    </div>
+                    
+                    <h2 style={{ marginTop: '2rem' }}>Accessibility Example</h2>
+                    <div className="icon-grid">
+                        <div className="icon-card">
+                            <IconHome size="2em" aria-label="Home" />
+                            <div>Accessible Home</div>
+                        </div>
+                        
+                        <div className="icon-card">
+                            <IconSearch size="2em" aria-label="Search" />
+                            <div>Accessible Search</div>
+                        </div>
+                    </div>
+                </div>
+            );
+        };
+        
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
