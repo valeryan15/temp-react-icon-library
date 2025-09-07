@@ -80,7 +80,7 @@ console.log(`New version: ${newVersion}`);
 
 // Publish to npm
 console.log('\nPublishing to npm...');
-exec('npm publish');
+exec('npm publish --access public');
 
 // Push changes to GitHub
 console.log('\nPushing changes to GitHub...');
