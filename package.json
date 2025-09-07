@@ -43,7 +43,7 @@
     "components",
     "ui"
   ],
-  "author": "Your Name",
+  "author": "Valerii Malanin",
   "license": "MIT",
   "peerDependencies": {
     "react": ">=16.14.0"
@@ -83,10 +83,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yourusername/react-icon-library.git"
+    "url": "https://github.com/valeryan15/temp-react-icon-library.git"
   },
   "bugs": {
-    "url": "https://github.com/yourusername/react-icon-library/issues"
+    "url": "https://github.com/valeryan15/temp-react-icon-library/issues"
   },
-  "homepage": "https://github.com/yourusername/react-icon-library#readme"
+  "homepage": "https://github.com/valeryan15/temp-react-icon-library#readme"
 }
