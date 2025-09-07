@@ -1,5 +1,5 @@
 {
-  "name": "react-icon-library",
+  "name": "@valeryan15/temp-react-icon-library",
   "version": "1.0.0",
   "description": "A modern, performant React icon library with TypeScript support",
   "type": "module",
