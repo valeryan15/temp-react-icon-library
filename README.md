@@ -1,4 +1,4 @@
-# Библиотека иконок React
+# Шаблон для библиотеки иконок React
 
 Современная, легковесная и доступная библиотека иконок React с поддержкой TypeScript. Создана для React 16.14+ с полной совместимостью для React 17 и 18.
 
@@ -15,9 +15,9 @@
 ## Установка
 
 ```bash
-npm install react-icon-library
+npm install @valeryan15/temp-react-icon-library
 # или
-yarn add react-icon-library
+yarn add @valeryan15/temp-react-icon-library
 ```
 
 ## Публикация пакета
@@ -43,7 +43,7 @@ node scripts/publish-package.cjs
 ### Базовое использование
 
 ```jsx
-import { IconStar } from 'react-icon-library/icons';
+import { IconStar } from '@valeryan15/temp-react-icon-library';
 
 function App() {
   return (
@@ -59,7 +59,7 @@ function App() {
 ### С пропсами
 
 ```jsx
-import { IconHome, IconSearch } from 'react-icon-library/icons';
+import { IconHome, IconSearch } from '@valeryan15/temp-react-icon-library';
 
 function App() {
   return (
@@ -120,7 +120,7 @@ function App() {
 
 ```jsx
 // Импортируется только иконка Star, а не вся библиотека
-import { IconStar } from 'react-icon-library/icons';
+import { IconStar } from '@valeryan15/temp-react-icon-library';
 ```
 
 ## Поддержка браузеров
@@ -270,7 +270,7 @@ export const ThickStroke: Story = {
 
 ## Лицензия
 
-MIT © Ваше имя
+MIT © @valeryan15
 
 ## Вклад в развитие
 
